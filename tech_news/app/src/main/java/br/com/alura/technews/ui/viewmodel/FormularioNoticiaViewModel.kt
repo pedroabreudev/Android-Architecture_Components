@@ -15,4 +15,5 @@ class FormularioNoticiaViewModel(private val repository: NoticiaRepository) : Vi
             repository.salva(noticia)
         }
     }
+    fun buscaPorId(id: Long) = repository.buscaPorId(id)
 }
