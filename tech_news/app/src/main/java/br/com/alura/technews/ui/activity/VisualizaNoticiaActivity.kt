@@ -14,7 +14,8 @@ import br.com.alura.technews.repository.NoticiaRepository
 import br.com.alura.technews.ui.activity.extensions.mostraErro
 import br.com.alura.technews.ui.viewmodel.VisualizaNoticiaViewModel
 import br.com.alura.technews.ui.viewmodel.factory.VisualizaNoticiaViewModelFactory
-import kotlinx.android.synthetic.main.activity_visualiza_noticia.*
+import kotlinx.android.synthetic.main.activity_visualiza_noticia.activity_visualiza_noticia_texto
+import kotlinx.android.synthetic.main.activity_visualiza_noticia.activity_visualiza_noticia_titulo
 
 private const val NOTICIA_NAO_ENCONTRADA = "Notícia não encontrada"
 private const val TITULO_APPBAR = "Notícia"
@@ -37,10 +38,6 @@ class VisualizaNoticiaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_visualiza_noticia)
         title = TITULO_APPBAR
         verificaIdDaNoticia()
-    }
-
-    override fun onResume() {
-        super.onResume()
         buscaNoticiaSelecionada()
     }
 
@@ -58,7 +55,7 @@ class VisualizaNoticiaActivity : AppCompatActivity() {
     }
 
     private fun buscaNoticiaSelecionada() {
-        viewModel.buscaPorId().observe(this, Observer { noticiaEncontrada ->
+        viewModel.noticiaEncontrada.observe(this, Observer { noticiaEncontrada ->
             noticiaEncontrada?.let {
                 preencheCampos(it)
             }

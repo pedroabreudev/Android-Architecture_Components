@@ -23,10 +23,6 @@ private const val MENSAGEM_FALHA_CARREGAR_NOTICIAS = "Não foi possível carrega
 
 class ListaNoticiasActivity : AppCompatActivity() {
 
-//    private val repository by lazy {
-//        NoticiaRepository(AppDatabase.getInstance(this).noticiaDAO)
-//    }
-
     private val adapter by lazy {
         ListaNoticiasAdapter(context = this)
     }
@@ -43,10 +39,6 @@ class ListaNoticiasActivity : AppCompatActivity() {
         title = TITULO_APPBAR
         configuraRecyclerView()
         configuraFabAdicionaNoticia()
-    }
-
-    override fun onResume() {
-        super.onResume()
         buscaNoticias()
     }
 
