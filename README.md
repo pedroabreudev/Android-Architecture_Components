@@ -15,9 +15,23 @@
 
 # Reutilização de telas com Fragments
 
+- Android Fragments: reutilizando componentes visuais
+  ## 🔨 Técnicas e tecnologias no projeto 
+
+
+
 # Gerenciando a navegação de telas com Navigation 
 
+- Navigation parte 1: transição de telas no Android
+- Navigation parte 2: novas features e reutilização de código
+  ## 🔨 Técnicas e tecnologias no projeto 
+
+
+
 # Vinculando o código fonte e View com o Data Binding
+
+- Data Binding no Android: vinculando modelo com layout
+  ## 🔨 Técnicas e tecnologias no projeto 
 
 
 
