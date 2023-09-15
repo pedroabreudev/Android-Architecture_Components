@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/listaProdutos">
-
     <fragment
         android:id="@+id/listaProdutos"
         android:name="br.com.alura.aluraesporte.ui.fragment.ListaProdutosFragment"
-        android:label="Lista de Produtos"
+        android:label="Lista de produtos"
         tools:layout="@layout/lista_produtos" >
         <action
             android:id="@+id/acao_listaProdutos_para_detalhesProduto"
-            app:destination="@id/detalhesProduto" />
+            app:destination="@id/detalhesProduto"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
-
-
     <fragment
         android:id="@+id/detalhesProduto"
         android:name="br.com.alura.aluraesporte.ui.fragment.DetalhesProdutoFragment"
@@ -23,17 +24,31 @@
         tools:layout="@layout/detalhes_produto" >
         <action
             android:id="@+id/acao_detalhesProduto_para_pagamento"
-            app:destination="@id/pagamento" />
+            app:destination="@id/pagamento"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <!--suppress NavigationFile -->
+        <argument
+            android:name="produtoId"
+            app:argType="long" />
     </fragment>
-
-    <fragment
-        android:id="@+id/pagamento"
-        android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
+    <fragment android:id="@+id/pagamento"
         android:label="Pagamento"
-        tools:layout="@layout/pagamento" >
+        android:name="br.com.alura.aluraesporte.ui.fragment.PagamentoFragment"
+        tools:layout="@layout/pagamento">
         <action
             android:id="@+id/acao_pagamento_para_listaProduto"
             app:destination="@id/listaProdutos"
-            app:popUpTo="@id/nav_graph"/>
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/nav_graph" />
+        <!--suppress NavigationFile -->
+        <argument
+            android:name="produtoId"
+            app:argType="long" />
     </fragment>
 </navigation>
