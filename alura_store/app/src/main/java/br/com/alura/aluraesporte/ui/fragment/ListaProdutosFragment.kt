@@ -66,6 +66,6 @@ class ListaProdutosFragment : Fragment() {
     private fun vaiParaDetalhesProduto(produtoId: Long) {
         val dados = Bundle()
         dados.putLong(CHAVE_PRODUTO_ID, produtoId)
-        controlador.navigate(R.id.detalhesProduto, dados)
+        controlador.navigate(R.id.acao_listaProdutos_para_detalhesProduto, dados)
     }
 }
